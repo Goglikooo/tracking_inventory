@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Item</title>
+</head>
+<body>
+    <h1>Add new Item</h1>
+    <form method="post" style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 10px;">
+        {% csrf_token %}
+        <label for="name">Item name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="serial_number">Serial number: </label>
+        <input type="text" name="serial_number" id="serial_number" required>
+
+        <label for="price">Item price:</label>
+        <input type="float" name="price" id="price" required>
+
+        <input type="submit">
+    </form>
+</body>
+</html>

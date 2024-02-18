@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>Inventory</title>
+</head>
+<body>
+    <h1>List of Items</h1>
+    <a href="{% url 'add' %}">Add New Item</a>
+    <a href="{% url 'index' %}">See as a Cards</a>
+
+
+    <table class="container" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th><h1>Name</h1></th>
+                <th><h1>Serial Number</h1></th>
+                <th><h1>Price</h1></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in inventory%}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.serial_number}}</td>
+                <td>${{item.price | floatformat:"2"}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+
+</body>
+</html>
